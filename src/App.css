@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add the following styles to the container class */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Add the following styles to the textarea element */
+textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+}
+
+/* Add the following styles to the button element */
+button {
+  width: 100%;
+}
