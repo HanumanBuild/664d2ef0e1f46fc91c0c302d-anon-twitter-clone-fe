@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// Define the TweetInput component
 const TweetInput = ({ fetchTweets }) => {
   const [tweet, setTweet] = useState('');
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (tweet.trim()) {
       try {
+        // Post the tweet to the backend
         await axios.post(`${process.env.REACT_APP_ANON_TWITTER_CLONE_BE_URL}/tweets`, { content: tweet });
         setTweet('');
         fetchTweets();
@@ -17,6 +20,7 @@ const TweetInput = ({ fetchTweets }) => {
     }
   };
 
+  // Render the form
   return (
     <form onSubmit={handleSubmit} className="mb-4">
       <textarea
@@ -32,4 +36,5 @@ const TweetInput = ({ fetchTweets }) => {
   );
 };
 
+// Export the TweetInput component
 export default TweetInput;
